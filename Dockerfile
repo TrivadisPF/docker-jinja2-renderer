@@ -12,7 +12,7 @@ RUN mkdir /variables/
 ENV SCRIPTS_DIR /scripts
 ENV TEMPLATES_DIR /templates
 
-RUN pip3 install jinja2-cli[yaml,toml,xml]==0.7.0,yq
+RUN pip3 install jinja2-cli[yaml,toml,xml]==0.7.0 yq
 
 # we assume that the output volume is mapped to /opt/analytics-generator/stacks
 CMD /scripts/generate.sh
