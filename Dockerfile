@@ -12,7 +12,10 @@ RUN mkdir /variables/
 ENV SCRIPTS_DIR /scripts
 ENV TEMPLATES_DIR /templates
 
-RUN pip3 install jinja2-cli[yaml,toml,xml]==0.7.0 yq
+RUN pip3 install "jinja2<3.1" jinja2-cli[yaml,toml,xml]==0.7.0
+
+RUN wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY}.tar.gz -O - | \
+  	tar xz && mv ${BINARY} /usr/local/bin/yq
 
 # we assume that the output volume is mapped to /opt/analytics-generator/stacks
 CMD /scripts/generate.sh
