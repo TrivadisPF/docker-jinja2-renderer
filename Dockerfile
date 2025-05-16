@@ -11,6 +11,8 @@ RUN mkdir /variables/
 # Set needed env vars
 ENV SCRIPTS_DIR /scripts
 ENV TEMPLATES_DIR /templates
+ENV VERSION=v4.2.0
+ENV BINARY=yq_linux_amd64
 
 RUN pip3 install "jinja2<3.1" jinja2-cli[yaml,toml,xml]==0.7.0
 
