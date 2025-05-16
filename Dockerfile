@@ -14,7 +14,7 @@ ENV TEMPLATES_DIR=/templates
 ENV VERSION=v4.2.0
 ENV BINARY=yq_linux_amd64
 
-RUN pip3 install jinja2-cli[yaml,toml,xml]==0.7.0
+RUN pip3 install jinja2-cli[yaml,toml,xml]==0.8.2
 
 RUN wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY}.tar.gz -O - | \
   	tar xz && mv ${BINARY} /usr/local/bin/yq
