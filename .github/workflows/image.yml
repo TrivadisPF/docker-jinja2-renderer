@@ -3,8 +3,8 @@ name: build-platys-modern-dataplatform
 on:
   push:
     branches: 
-      - develop
       - master
+      - 0.8.1
     tags:
       - '*'
       
